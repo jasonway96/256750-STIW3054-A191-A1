@@ -139,7 +139,7 @@ public class Compare
                 }
             }
 
-            System.out.println("\narr3 list values, here arr1 has some values which arr2 DOES NOT have : " + arr3);
+            System.out.println("\nMatric Number which does not appear in the namelist : " + arr3);
             writeResultDataToExcel(arr3);
 
             file1.close();
