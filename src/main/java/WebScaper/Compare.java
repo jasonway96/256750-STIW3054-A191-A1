@@ -9,7 +9,6 @@ import org.apache.poi.ss.usermodel.Row;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Iterator;
 
 public class Compare
@@ -56,7 +55,6 @@ public class Compare
                     Cell cell = cellIterator.next();
                     if (cell.getColumnIndex() == columnNumForFirst)
                     {
-                        // Check the cell type and format accordingly
                         switch (cell.getCellType())
                         {
                             case NUMERIC:
