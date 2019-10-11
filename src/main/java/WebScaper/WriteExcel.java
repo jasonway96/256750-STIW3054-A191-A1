@@ -23,7 +23,7 @@ public class WriteExcel
                 Row header = sheet.createRow(0);
                 header.createCell(0).setCellValue("No");
                 header.createCell(1).setCellValue("Name");
-                header.createCell(2).setCellValue("Matric No");
+                header.createCell(2).setCellValue("Matric");
 
                 Row row = sheet.createRow(num);
 

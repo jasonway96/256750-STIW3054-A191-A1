@@ -176,16 +176,16 @@ public class Compare
             HSSFCell cell;
             // System.out.println("array size is :: "+minusArray.size());
 
-            int cellnumber = 1;
+            int cellnumber = 2;
             for (int i1 = 1; i1 < arr3.size(); i1++) {
                 row = spreadSheet.createRow(i1);
                 cell = row.createCell(cellnumber);
                 // System.out.print(cell.getCellStyle());
                 cell.setCellValue(arr3.get(i1).toString().trim());
             }
-            int cellnumber2 = 2;
+            int cellnumber2 = 3 ;
             for (int i2 = 1; i2 < arr3.size(); i2++) {
-                row = spreadSheet.createRow(3);
+                row = spreadSheet.createRow(i2);
                 cell = row.createCell(cellnumber2);
                 // System.out.print(cell.getCellStyle());
                 cell.setCellValue(arr3.get(i2).toString().trim());
