@@ -16,7 +16,6 @@ public class Compare
 {
     static Boolean check = false;
 
-    //Change column number whatever you want to take data
     public static int columnNumForFirst = 2;
     public static int columnNumForSecond = 0;
 
@@ -36,23 +35,19 @@ public class Compare
             FileInputStream file2 = new FileInputStream(new File(
                     "C:\\Assignment1\\Namelink.xls"));
 
-            // Get the workbook instance for XLSX file
             HSSFWorkbook workbook1 = new HSSFWorkbook(file1);
             HSSFWorkbook workbook2 = new HSSFWorkbook(file2);
 
-            // Get only first sheet from the workbook
             HSSFSheet sheet1 = workbook1.getSheetAt(0);
             HSSFSheet sheet2 = workbook2.getSheetAt(0);
 
 
-            // Get iterator to all the rows in current sheet1
             Iterator<Row> rowIterator1 = sheet1.iterator();
             Iterator<Row> rowIterator2 = sheet2.iterator();
 
             while (rowIterator1.hasNext())
             {
                 Row row = rowIterator1.next();
-                // For each row, iterate through all the columns
                 Iterator<Cell> cellIterator = row.cellIterator();
 
                 while (cellIterator.hasNext())
@@ -92,16 +87,12 @@ public class Compare
             while (rowIterator2.hasNext())
             {
                 Row row1 = rowIterator2.next();
-                // For each row, iterate through all the columns
                 Iterator<Cell> cellIterator1 = row1.cellIterator();
 
                 while (cellIterator1.hasNext())
                 {
 
                     Cell cell1 = cellIterator1.next();
-                    // Check the cell type and format accordingly
-
-                    // This is for read only one column from excel
                     if (cell1.getColumnIndex() == columnNumForSecond)
                     {
                         switch (cell1.getCellType())
@@ -174,20 +165,17 @@ public class Compare
             HSSFSheet spreadSheet = workBook.createSheet("New");
             HSSFRow row;
             HSSFCell cell;
-            // System.out.println("array size is :: "+minusArray.size());
 
             int cellnumber = 2;
             for (int i1 = 1; i1 < arr3.size(); i1++) {
                 row = spreadSheet.createRow(i1);
                 cell = row.createCell(cellnumber);
-                // System.out.print(cell.getCellStyle());
                 cell.setCellValue(arr3.get(i1).toString().trim());
             }
             int cellnumber2 = 3 ;
             for (int i2 = 1; i2 < arr3.size(); i2++) {
                 row = spreadSheet.createRow(i2);
                 cell = row.createCell(cellnumber2);
-                // System.out.print(cell.getCellStyle());
                 cell.setCellValue(arr3.get(i2).toString().trim());
             }
             workBook.write(resultExcel);
