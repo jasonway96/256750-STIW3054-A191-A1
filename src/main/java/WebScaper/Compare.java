@@ -13,8 +13,6 @@ import java.util.Iterator;
 
 public class Compare
 {
-    static Boolean check = false;
-
     public static int columnNumForFirst = 2;
     public static int columnNumForSecond = 0;
 
